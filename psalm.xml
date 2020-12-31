@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="4"
+    phpVersion="8.0"
+    findUnusedVariablesAndParams="true"
+    resolveFromConfigFile="true"
+    useDocblockPropertyTypes="true"
+    allowStringToStandInForClass="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    >
+    <projectFiles>
+        <directory name="app" />
+        <directory name="database" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+        <!-- <file name="bootstrap/helpers.php" /> -->
+    </projectFiles>
+    <issueHandlers>
+        <!-- <UnusedClosureParam errorLevel="suppress" />
+        <UndefinedThisPropertyFetch errorLevel="suppress" />
+        <UndefinedMethod>
+            <errorLevel type="suppress">
+                <file name="src/Support/DiscoverEventHandlers.php"/>
+            </errorLevel>
+        </UndefinedMethod> -->
+    </issueHandlers>
+    <plugins>
+        <pluginClass class="Psalm\LaravelPlugin\Plugin"/>
+    </plugins>
+    <stubs>
+        <file name=".phpstorm.meta.php" />
+        <file name="_ide_helper.php" />
+        <file name="_ide_helper_models.php" />
+    </stubs>
+</psalm>
